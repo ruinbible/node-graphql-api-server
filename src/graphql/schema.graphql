@@ -1,0 +1,53 @@
+type Query {
+    people: [Person]!
+    person(id: ID!): Person
+    code(hspTpCd: String!, codeGubun: String!, useYn: String!): [Code]!
+    codes(hspTpCd: String!, codeGubun: String!, useYn: String!): [Code]!
+    # departs(hspTpCd: String!, deptCd: String): [Depart]
+    # StaffSurveyForm(hspTpCd: String!, id: String!): [StaffSurveyForm]
+}
+
+type Person {
+    id: ID!
+    name: String!
+    age: Int!
+    gender: String!
+}
+
+type Code {
+    HSP_TP_CD: String!
+    ID: String!
+    NM: String
+}
+
+type Depart {
+    HSP_TP_CD: String!
+    DEPT_CD: String!
+    DEPT_NM: String
+}
+
+type StaffSurveyForm {
+    COMN_GRP_CD: String!
+    COMN_CD: String!
+    HSP_TP_CD: String!
+    COMN_CD_NM: String!
+    COMN_CD_EXPL: String
+    DTRL1_NM: String
+    DTRL2_NM: String
+    DTRL3_NM: String
+    DTRL4_NM: String
+    DTRL5_NM: String
+    DTRL6_NM: String
+    SCRN_MRK_SEQ: Int
+    USE_YN: String
+    FSR_STF_NO: String
+    FSR_DTM: Date
+    FSR_PRGM_NM: String
+    FSR_IP_ADDR: String
+    LSH_STF_NO: String
+    LSH_DTM: Date
+    LSH_PRGM_NM: String
+    LSH_IP_ADDR: String 
+}
+
+scalar Date
